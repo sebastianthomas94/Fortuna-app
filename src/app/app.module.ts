@@ -9,6 +9,7 @@ import { DiceComponent } from './dice/dice.component';
 
 import { HttpClientModule } from "@angular/common/http";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     TimerComponent,
     PannelComponent,
     DiceComponent,
-    NavBarComponent
+    NavBarComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
