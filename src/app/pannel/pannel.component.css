@@ -2,3 +2,12 @@
   height: 200px;
   width: 50%;
 }  
+
+p{
+  font-size: xx-large;
+  align-content: center;
+}
+
+.btn-large{
+  color: black;
+}

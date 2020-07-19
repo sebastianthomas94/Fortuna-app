@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FortunaComService} from '../fortuna-com.service';
+
 @Component({
   selector: 'app-pannel',
   templateUrl: './pannel.component.html',
@@ -7,11 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PannelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fcom:FortunaComService) { }
 
+  red;
+  blue;
+  green;
+  selected: boolean[] = [this.red,this.blue,this.green];
 
+  time:any;       //------------for service data
   ngOnInit() {
+    let timer=setInterval(()=>this.check(),999);          //periodic checking
 	  
+  }
+  onClickMe(n){
+    if(!(this.selected[0] || this.selected[1] || this.selected[2]))
+    this.selected[n] = true;
+  }
+
+  check(){                                                 //periodic checking
+  this.fcom.getTimer().subscribe(data=>{
+    console.log(data);
+    this.time = data;
+  });
+  if (this.time.cooldownTime==0)
+    {
+      this.selected=[false,false,false];
+    }
+
   }
 
 }
