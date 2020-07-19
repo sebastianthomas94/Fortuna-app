@@ -1,0 +1,29 @@
+<div class="container right-align" style="color: antiquewhite;">
+<h4 *ngIf="!time.cooldown">Timer</h4 >
+<h4 *ngIf="time.cooldown">Cooldown</h4>
+
+
+<h4>
+<!-- <table style="width:50%">
+	<tr *ngIf="!time.cooldown">
+		<td>{{time.minutes}}</td>:
+		<td><a *ngIf="time.seconds/10<1">0</a>{{time.seconds}}</td>
+	</tr>
+	<tr *ngIf="time.cooldown">
+		<td>0</td>:
+		<td><p *ngIf="time.cooldownTime/10<1">0</p>{{time.cooldownTime}}</td>
+	</tr>
+</table> -->
+
+<div *ngIf="!time.cooldown">
+	<h5>{{time.minutes}}:{{time.seconds}}</h5>
+
+</div>
+<div *ngIf="time.cooldown">
+	{{time.cooldownTime}} seconds
+</div>
+</h4>
+
+
+
+</div>
