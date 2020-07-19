@@ -17,4 +17,17 @@ export class FortunaComService {
     return this.http.get("http://localhost:1234/timer");
   } 
 
+  getUser(user){
+    console.log("Signing in......");
+   return this.http.post("http://localhost:1234/login", user);
+ 
+ }
+ checkUsernameEmail(user){
+  return this.http.get("http://localhost:1234/signup/"+user['username'])
+}
+
+addUser(user){
+  return this.http.post("http://localhost:1234/signup", user)
+}
+
 }

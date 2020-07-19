@@ -1,0 +1,47 @@
+
+<div class="card-body " style="margin: auto;width: 50%;">
+    <div class="row justify-content-center  ">
+        <div class="col s12" style=""> 
+            <div class="card" id="card1">
+              <div class="alert alert-danger" role="alert" *ngIf="alert">
+                Incorrent Username or Password!
+              </div>
+              <h5 class="card-header text-center"> Login </h5>
+              <div class="card-body" [formGroup]="loginForm">
+                <table class="table table-borderless">
+                    <tr>
+                      <td> Username </td>
+                      <td> <input type="text" class="form-control" [(ngModel)]="credintials.username" formControlName="username"> </td>
+                    </tr>
+                    <tr class="text-danger" *ngIf="loginForm.controls['username'].hasError('required') && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
+                        <td></td>
+                        <td>This field is required</td>
+                    </tr>
+                    <br>
+                    <tr>
+                      <td> Password </td>
+                      <td> <input type="password" class="form-control" [(ngModel)]="credintials.password" formControlName="password"> </td>
+                    </tr>
+                    <tr class="text-danger" *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        <td></td>
+                        <td>This field is required</td>
+                    </tr>
+                    <br>
+                    <tr>
+                      <td> </td>
+                      <td> <button type="button" class="btn btn-success" [disabled]=!loginForm.valid (click)="login()"> Login </button></td>
+                    </tr>
+                </table>
+                <br><div style="text-align:center">
+                Dont have and account yet?<a (click)="gotosignup()" >Signup</a> <button routelink="/signup">Signup</button>
+            </div></div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+      
