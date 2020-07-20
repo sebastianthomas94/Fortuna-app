@@ -16,6 +16,8 @@ export class PannelComponent implements OnInit {
   green;
   selected: boolean[] = [this.red,this.blue,this.green];
 
+  testshape:any[]=["","",""];
+
   time:any;       //------------for service data
   ngOnInit() {
     let timer=setInterval(()=>this.check(),999);          //periodic checking
@@ -24,6 +26,9 @@ export class PannelComponent implements OnInit {
   onClickMe(n){
     if(!(this.selected[0] || this.selected[1] || this.selected[2]))
     this.selected[n] = true;
+
+    this.testshape[n]="pulse btn-floating";
+
   }
 
   check(){                                                 //periodic checking
@@ -34,6 +39,7 @@ export class PannelComponent implements OnInit {
   if (this.time.cooldownTime==0)
     {
       this.selected=[false,false,false];
+	  this.testshape=["","",""];
     }
 
   }
