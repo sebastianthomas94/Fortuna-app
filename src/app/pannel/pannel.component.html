@@ -5,18 +5,24 @@
 	<div class="col s4 m4 l4 " >
 	<div class=" btn-large red waves-effect z-depth-2 sizeofbox {{testshape[0]}}" (click)="onClickMe(0)"> 
 	<div class="" >
-		<p *ngIf="selected[0]">Selected Red</p>
+		<p *ngIf="selected[0]&&!time.cooldown">Selected Red</p>
+		<p *ngIf="time.dice==1 && selected[0] ; else elseBlock" >you won</p>
+		<ng-template  #elseBlock><p *ngIf="time.dice!=1 && selected[0]&& time.dice!=0" >you lost</p></ng-template>
 	</div>
 	</div>
 	</div>
 	<div class="col s4 m4 l4 " >
 	<div class=" btn-large blue waves-effect z-depth-2 sizeofbox {{testshape[1]}}" (click)="onClickMe(1)"> 
-		<p *ngIf="selected[1]">Selected Blue</p>
+		<p *ngIf="selected[1]&&!time.cooldown">Selected Blue</p>
+		<p *ngIf="time.dice==2 && selected[1]; else elseBlock" >you won</p>
+		<ng-template  #elseBlock><p *ngIf="time.dice!=2 && selected[1] && time.dice!=0">you lost</p></ng-template>
 	</div>
 	</div>
 	<div class="col s4 m4 l4 ">
 	<div class=" btn-large green waves-effect z-depth-2 sizeofbox {{testshape[2]}}" (click)="onClickMe(2)"> 
-	<p *ngIf="selected[2]">Selected Green</p>
+	<p *ngIf="selected[2]&&!time.cooldown">Selected Green</p>
+	<p *ngIf="time.dice==3 && selected[2]; else elseBlock" >you won</p>
+	<ng-template *ngIf="time.dice!=3 && selected[2] && time.dice!=0" #elseBlock><p  >you lost</p></ng-template>
 	</div>
 	</div>
 	

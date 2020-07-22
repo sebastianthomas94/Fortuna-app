@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FortunaComService } from "../fortuna-com.service";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private service: FortunaComService) { }
+
+  username;
 
   ngOnInit() {
+
+    if(!localStorage.getItem("Username"))
+      this.router.navigateByUrl("login");
   }
 
 }

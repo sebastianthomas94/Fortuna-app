@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     this.frtunacom.getUser(this.credintials).subscribe(data=>{
       if (data['found'] == true){
         localStorage.setItem("Username",this.credintials['username']);
-        alert(localStorage.getItem("Username"));
         this.router.navigateByUrl("");
       } 
       else {

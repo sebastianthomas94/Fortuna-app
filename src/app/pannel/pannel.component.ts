@@ -24,11 +24,15 @@ export class PannelComponent implements OnInit {
 	  
   }
   onClickMe(n){
-    if(!(this.selected[0] || this.selected[1] || this.selected[2]))
-    this.selected[n] = true;
+	  if(!this.time.cooldown){
+		  
+			if(!(this.selected[0] || this.selected[1] || this.selected[2]))
+			{
+				this.selected[n] = true;
 
-    this.testshape[n]="pulse btn-floating";
-
+				this.testshape[n]="pulse btn-floating";
+			}
+	}
   }
 
   check(){                                                 //periodic checking
@@ -41,7 +45,9 @@ export class PannelComponent implements OnInit {
       this.selected=[false,false,false];
 	  this.testshape=["","",""];
     }
-
+	
+	/* if (this.time.cooldownTime==0)
+		this.testshape=["","",""]; */
   }
 
 }

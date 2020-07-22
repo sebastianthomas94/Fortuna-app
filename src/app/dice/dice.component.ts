@@ -34,5 +34,7 @@ export class DiceComponent implements OnInit {
       this.color="Blue";
     else if(this.time.dice==3)
       this.color="Green";
+	else
+		this.color="";
  }  
 }
