@@ -11,3 +11,7 @@ p{
 .btn-large{
   color: black;
 }
+
+.modal.show {
+  display: block;
+}

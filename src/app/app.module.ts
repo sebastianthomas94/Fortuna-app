@@ -14,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AccountsComponent } from './accounts/accounts.component';
 
 /* 
 
@@ -46,7 +47,8 @@ import { RadioButtonModule } from "primeng/radiobutton"; */
     NavBarComponent,
     MainPageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,

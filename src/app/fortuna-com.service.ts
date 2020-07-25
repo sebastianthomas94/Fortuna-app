@@ -22,12 +22,34 @@ export class FortunaComService {
    return this.http.post("http://localhost:1234/login", user);
  
  }
+ 
+ getName(user)
+ {
+	     console.log("Geting Name of account holder");
+   return this.http.post("http://localhost:1234/login/data", user);
+ }
+ 
  checkUsernameEmail(user){
   return this.http.get("http://localhost:1234/signup/"+user['username'])
 }
 
 addUser(user){
   return this.http.post("http://localhost:1234/signup", user)
+}
+
+addWallet(data)
+{
+	return this.http.post("http://localhost:1234/login/data/wallet", data);
+}
+
+sendData(data)
+{
+	return this.http.post("http://localhost:1234/data", data);
+}
+
+getData(user)
+{
+	return this.http.post("http://localhost:1234/data/get", user);
 }
 
 }

@@ -18,4 +18,10 @@ export class NavBarComponent implements OnInit {
     localStorage.clear();
 	  this.router.navigateByUrl("login");
   }
+  
+  gotoacc()
+  {
+	  
+	  this.router.navigateByUrl("account");
+  }
 }
